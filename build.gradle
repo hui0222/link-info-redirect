@@ -32,6 +32,12 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
+    //loombook
+    compileOnly 'org.projectlombok:lombok'
+
+    //mysql
+    runtimeOnly 'mysql:mysql-connector-java'
+
     //jpa
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile("com.h2database:h2")// jpa테스트용도
