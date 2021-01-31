@@ -1,13 +1,15 @@
 package kr.co.lir.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import lombok.Data;
+
+import javax.persistence.*;
 
 @Entity
+@Data
 public class Board {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//넣어줘야됨..
     private Long id;
 
     private String title;
@@ -17,3 +19,5 @@ public class Board {
     private String author;
 
 }
+
+
