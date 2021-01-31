@@ -27,6 +27,7 @@ public class BoardController {
             Board board
     ){
 
+        //TODO content, title등 세부값 안들어감 확인해야됨!
         boardService.boardInsert(board);
 
         return "board insert success";
