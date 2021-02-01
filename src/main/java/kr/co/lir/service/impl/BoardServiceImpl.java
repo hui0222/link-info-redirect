@@ -25,12 +25,12 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public void boardDelete(Integer boardId){
+    public void boardDelete(Long boardId){
         boardRepository.deleteById(boardId);
     }
 
     @Override
-    public Board boardDetail(Integer bordId){
-        return boardRepository.findByidOrderById(bordId);
+    public Board boardDetail(Long bordId){
+        return boardRepository.findByid(bordId);
     }
 }

@@ -9,6 +9,6 @@ public interface BoardService {
 
     List<Board> boardList();
     void boardInsert(Board board);
-    void boardDelete(Integer id);
-    Board boardDetail(Integer id);
+    void boardDelete(Long id);
+    Board boardDetail(Long id);
 }
