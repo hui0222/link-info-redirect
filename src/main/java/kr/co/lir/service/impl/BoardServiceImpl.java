@@ -23,4 +23,14 @@ public class BoardServiceImpl implements BoardService {
     public void boardInsert(Board board){
         boardRepository.save(board);
     }
+
+    @Override
+    public void boardDelete(Integer boardId){
+        boardRepository.deleteById(boardId);
+    }
+
+    @Override
+    public Board boardDetail(Integer bordId){
+        return boardRepository.findByidOrderById(bordId);
+    }
 }
