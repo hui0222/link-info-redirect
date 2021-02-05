@@ -1,6 +1,7 @@
 package kr.co.lir.controller;
 
 import kr.co.lir.domain.Board;
+import kr.co.lir.repository.BoardRepository;
 import kr.co.lir.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,19 +15,18 @@ public class BoardController {
     @Autowired
     BoardService boardService;
 
+    @Autowired
+    BoardRepository boardRepsitory;
 
     /* API */
     @GetMapping("/api/v1/board/list")
     public List<Board> getBoardList(){
-
-        List<Board> boardList = boardService.boardList();
-
-        return boardList;
+        return boardService.boardList();
     }
 
-    @GetMapping("/api/v1/board/insert")
+    @PostMapping("/api/v1/board/insert")
     public String boardInsert(
-            Board board
+            @RequestBody Board board
     ){
         boardService.boardInsert(board);
         return "board insert success";
@@ -47,5 +47,17 @@ public class BoardController {
         return "board Delete success";
     }
 
+    /* JPA API */
+    @PostMapping("/api/v2/board/insert")
+    public String boardJpaInsert(
+            @RequestBody Board board
+    ){
+        boardRepsitory.save(Board.builder()
+                .title(board.getTitle())
+                .author(board.getAuthor())
+                .content(board.getContent())
+                .build());
+        return "board insert success";
+    }
 
 }

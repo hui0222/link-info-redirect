@@ -1,0 +1,32 @@
+{{>layout/header}} <!-- 파일 위치 기준 경로아니고 절대경로 -->
+<h1>Mushache Detail</h1>
+<div class="col-md-12">
+    <div class="col-md-4">
+        <table class="table table-horizontal table-bordered">
+            <tr>
+                <th>No.</th>
+                <td>{{board.id}}</td>
+            </tr>
+            <tr>
+                <th>제목</th>
+                <td>{{board.title}}</td>
+            </tr>
+            <tr>
+                <th>작성자</th>
+                <td>{{board.author}}</td>
+            </tr>
+            <tr>
+                <th>최종수정일</th>
+                <td>{{board.modifyDate}}</td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td>{{board.content}}</td>
+            </tr>
+        </table>
+        <a href="/board/list" role="button" class="btn btn-secondary">목록</a>
+        <button type="button" class="btn btn-danger" id="btn-delete" value="{{board.id}}">삭제</button>
+    </div>
+</div>
+
+{{>layout/footer}}

@@ -3,9 +3,40 @@
 <div class="col-md-12">
     <div class="row">
         <div class="col-md-6">
+            <a href="/" role="button" class="btn btn-primary">홈 화면</a>
             <a href="/board/form" role="button" class="btn btn-primary">게시판 글쓰기</a>
         </div>
     </div>
+
+    <br>
+
+    <!-- 리스트 -->
+    <table class="table table-horizontal table-bordered">
+        <thead class="thead-strong">
+        <tr>
+            <th>No.</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>최종수정일</th>
+            <th>관리</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        {{#boardList}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{title}}</td>
+                <td>{{author}}</td>
+                <td>{{modifyDate}}</td>
+                <td>
+                    <button type="button" class="btn btn-primary" name="btn-detail" value="{{id}}">상세</button>
+                    <button type="button" class="btn btn-danger" name="btn-delete" value="{{id}}">삭제</button>
+                </td>
+            </tr>
+        {{/boardList}}
+        </tbody>
+    </table>
+
 </div>
 
 {{>layout/footer}}
