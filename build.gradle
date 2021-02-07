@@ -45,6 +45,11 @@ dependencies {
 
     //Mustache
     compile('org.springframework.boot:spring-boot-starter-mustache')
+
+    //security
+    compile('org.springframework.boot:spring-security-oauth2-client')
+//    compile('org.springframework.boot:spring-security-oauth2-autoconfigure')
+
 }
 test {
     useJUnitPlatform()
