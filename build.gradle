@@ -46,7 +46,8 @@ dependencies {
     //Mustache
     compile('org.springframework.boot:spring-boot-starter-mustache')
 
-    //security
+    //security 소셜로그인 및 클라이언트 입장에서 필요한 의존성
+    compile('org.springframework.boot:spring-boot-starter-oauth2-client')
 //    compile('org.springframework.boot:spring-security-oauth2-client')
 //    compile('org.springframework.boot:spring-security-oauth2-autoconfigure')
 
