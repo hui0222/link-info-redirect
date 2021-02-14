@@ -10,8 +10,9 @@
                 <a href="/logout" role="button" class="btn btn-info active">로그아웃</a>
             {{/userName}}
 
-            {{#userName}}
-                <a href="/oauth2/authorization/google" role="button" class="btn btn-sucess active">Google 로그인</a>
+            {{^userName}}
+                <a href="/oauth2/authorization/google" role="button" class="btn btn-secondary active">Google 로그인</a>
+                <a href="/oauth2/authorization/naver" role="button" class="btn btn-success active">Naver 로그인</a>
             {{/userName}}
 
         </div>

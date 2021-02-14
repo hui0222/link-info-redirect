@@ -15,11 +15,11 @@ public class MainController {
     private final HttpSession httpSession;
 
     @GetMapping(value = "/")
-    public String index(){
+    public String index(Model model){
         SessionUser user = (SessionUser) httpSession.getAttribute("user");
 
         if(user != null) {
-
+            model.addAttribute("userName", user.getName() );
         }
 
         return "index";

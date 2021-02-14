@@ -51,6 +51,9 @@ dependencies {
 //    compile('org.springframework.boot:spring-security-oauth2-client')
 //    compile('org.springframework.boot:spring-security-oauth2-autoconfigure')
 
+    // session 저장소
+    compile('org.springframework.session:spring-session-jdbc')
+
 }
 test {
     useJUnitPlatform()
