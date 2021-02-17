@@ -67,13 +67,15 @@ public class OAuthAttributes {
     }
 
     private static OAuthAttributes ofKakao(String userNameAttributeName, Map<String,Object> attributes) {
-        Map<String, Object> response = (Map<String, Object>) attributes.get("response");
+        Map<String, Object> response = (Map<String, Object>) attributes.get("kakao_account");
+        // response > profile - [nickname, profile_image_url]
+        Map<String, Object> profile = (Map<String, Object>) response.get("profile");
 
         return  OAuthAttributes.builder()
-                .name((String) response.get("nickname"))
-                .email((String) response.get("account_email"))
-                .picture((String) response.get("profile_image"))
-                .attributes(response)
+                .name((String) profile.get("nickname"))
+                .email((String) response.get("email"))
+                .picture((String) profile.get("profile_image_url"))
+                .attributes(attributes) //id값이 들어가야됨.
                 .nameAttributeKey(userNameAttributeName)
                 .build();
     }
